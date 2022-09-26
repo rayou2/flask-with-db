@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Patient List </title>
+</head>
+<body>
+
+    <div>
+
+        <h1> Patient Table With No Bootstrap</h1>
+
+            <table>
+                <tr>  
+                    <!-- setting the table names -->
+                    <th> Medical Record Number (MRN) </th>
+                    <th> First Name (FN) </th>
+                    <th> Last Name (LN) </th>
+                    <th> Gender </th>
+                    <th> Date of Birth (DOB) </th>
+                    <th> City </th>
+                    <th> Insurance </th>
+                    <th> Phone </th>
+                </tr>
+            
+                {% for i in listPatients %}
+                    <tr>
+                        <td> {{ patient.mrn }} </td>
+                        <td> {{ patient.firstname }} </td>
+                        <td> {{ patient.lastName }} </td>
+                        <td> {{ patient.gender }} </td>
+                        <td> {{ patient.dob }} </td>
+                        <td> {{ patient.city }} </td>
+                        <td> {{ patient.insurance }} </td>
+                        <td> {{ patient.phone }} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+
+    </div>
+
+
+</body>
+</html>
