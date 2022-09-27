@@ -6,4 +6,4 @@ The creations of fake patient data is coded in the files "createDB.py" and "conn
 
 The flask app is connected to the local SQLite DB in this repo
 
-Flask app will be deployed on GCP: http://34.66.243.121
+Flask app could not be deployed on GCP
