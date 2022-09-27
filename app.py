@@ -14,14 +14,6 @@ def get_db_connection():
     return conn
 
 @app.route('/patients')
-def patients_list():
-    db = get_db_connection()
-    patientListSql = db.execute('SELECT * FROM patient_table').fetchall()
-    db.close()
-    print('patientListSql:', patientListSql)
-    return render_template('index.html', listPatients=patientListSql) #creating variable listPatients in .html that contains sql data (patientsListSql) from sqlite db
-
-@app.route('/bootstrap')
 def bootstrap():
     conn = get_db_connection()
     patientListSql = conn.execute('SELECT * FROM patient_table').fetchall()
@@ -31,4 +23,4 @@ def bootstrap():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0', port=80)
