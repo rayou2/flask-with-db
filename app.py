@@ -2,9 +2,6 @@ from flask import Flask, render_template
 import sqlite3
 import os
 
-# create a new flask app
-app = Flask(__name__)
-
 # create a function that will be called when the user accesses the root of the website
 def get_db_connection():
     dir = os.getcwd() + '/patients.db'
@@ -12,6 +9,12 @@ def get_db_connection():
     conn = sqlite3.connect(dir) # create connection to the database
     conn.row_factory = sqlite3.Row 
     return conn
+
+app = Flask(__name__)
+
+@app.route('/')
+def homepage():
+    return render_template('home.html')
 
 @app.route('/patients')
 def bootstrap():
